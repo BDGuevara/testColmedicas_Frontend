@@ -1,0 +1,172 @@
+<div class="card">
+  <div class="card-header">Cliente</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="TipoIdentificacion">Tipo de Identificación:</label>
+        <select
+          class="form-control"
+          name="TipoIdentificacion"
+          id="TipoIdentificacion"
+          [(ngModel)]="usuario.tipoidentificacion.id"
+        >
+          <option value="1">Cédula de Ciudadanía</option>
+          <option value="2">Tarjeta de Identidad</option>
+          <option value="3">Pasaporte</option>
+          <option value="4">Cédula de Extranjería</option>
+          <option value="5">Otros</option>
+        </select>
+      </div>
+      <div class="form-group col-6">
+        <label for="identificacion">Numero de identificación</label>
+        <input
+          type="text"
+          class="form-control"
+          name="identificacion"
+          id="identificacion"
+          placeholder="Numero de Identificacion"
+          [(ngModel)]="usuario.numerodocumento"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="primernombre">Primer Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="primernombre"
+          id="primernombre"
+          placeholder="Primer Nombre"
+          [(ngModel)]="usuario.primernombre"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="segundonombre">Segundo Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="segundonombre"
+          id="segundonombre"
+          placeholder="Segundo Nombre"
+          [(ngModel)]="usuario.segundonombre"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="primerapellido">Primer Apellido</label>
+        <input
+          type="text"
+          class="form-control"
+          name="primerapellido"
+          id="primerapellido"
+          placeholder="Primer Apellido"
+          [(ngModel)]="usuario.primerapellido"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="segundoapellido">Segundo Apellido</label>
+        <input
+          type="text"
+          class="form-control"
+          name="segundoapellido"
+          id="segundoapellido"
+          placeholder="Segundo Apellido"
+          [(ngModel)]="usuario.segundoapellido"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="fechanacimiento">Fecha de Nacimiento</label>
+        <input
+          type="date"
+          class="form-control"
+          name="fechanacimiento"
+          id="fechanacimiento"
+          [(ngModel)]="usuario.fechanacimiento"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          name="email"
+          id="email"
+          placeholder="Email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          [(ngModel)]="usuario.email"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="direccion">Direccion</label>
+        <input
+          type="text"
+          class="form-control"
+          name="direccion"
+          id="direccion"
+          placeholder="Direccion"
+          [(ngModel)]="usuario.direccionresidencia"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="celular">Celular</label>
+        <input
+          type="text"
+          class="form-control"
+          name="celular"
+          id="celular"
+          placeholder="Celular"
+          [(ngModel)]="usuario.numerocelular"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="plan">Plan:</label>
+        <select
+          class="form-control"
+          name="plan"
+          id="plan"
+          [(ngModel)]="usuario.plan.id"
+        >
+          <option value="1">Plan Básico</option>
+          <option value="2">Plan Intermedio</option>
+          <option value="3">Plan Avanzado</option>
+          <option value="4">Plan Premium</option>
+          <option value="5">Plan Familiar</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-6">
+        <button
+          type="button"
+          class="btn btn-secondary sm my-4 justify-content-md-end"
+
+          (click)="usuario.id ? editarUsuario() : createUsuario()"
+        >
+          Guardar
+        </button>
+      </div>
+      <div class="form-group col-6">
+        <button
+          type="button"
+          class="btn btn-secondary sm my-4 justify-content-md-end"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
